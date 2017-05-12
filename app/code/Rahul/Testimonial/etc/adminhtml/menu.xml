@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Rahul_Testimonial::testimonial" title="Testimonial" module="Rahul_Testimonial" sortOrder="40" action="testimonial/testimonial" resource="Rahul_Testimonial::testimonial"/>
+		<!-- <add id="Rahul_Testimonial::sample" title="Subscriber Details" module="Rahul_Testimonial" sortOrder="1" parent="Rahul_Testimonial::parent" action="outofstock/subscriber" resource="Rahul_Testimonial::sample"/> -->
+
+    </menu>
+</config>

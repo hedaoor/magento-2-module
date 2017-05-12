@@ -1,0 +1,100 @@
+<form action="<?php echo $block->getUrl('testimonial/index/save') ?>" class="testimonial-register" id="testimonial-register" method="post" enctype="multipart/form-data">
+	<fieldset class="fieldset login" data-hasrequired="<?php /* @escapeNotVerified */
+                echo __('* Required Fields') ?>">
+        <div class="field name required">
+        	<label class="label" for="name"><span><?php /* @escapeNotVerified */
+        		echo __('Name') ?></span></label>
+
+    		<div class="control">
+    			<input name="name"
+    			autocomplete="off"
+    			id="name" type="text" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Name') ?>" data-validate="{required:true}">
+    		</div>
+    	</div>
+
+    	<div class="field email required">
+        	<label class="label" for="email"><span><?php /* @escapeNotVerified */
+        		echo __('Email') ?></span></label>
+
+    		<div class="control">
+    			<input name="email"
+    			autocomplete="off"
+    			id="email" type="email" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Email') ?>" data-validate="{required:true, 'validate-email':true}">
+    		</div>
+    	</div>
+
+    	<div class="field website ">
+        	<label class="label" for="website"><span><?php /* @escapeNotVerified */
+        		echo __('Your Website') ?></span></label>
+
+    		<div class="control">
+    			<input name="website"
+    			autocomplete="off"
+    			id="website" type="text" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Your Website') ?>" data-validate="{required:false, 'url2':false}">
+    		</div>
+    	</div>
+
+    	<div class="field company">
+        	<label class="label" for="company"><span><?php /* @escapeNotVerified */
+        		echo __('Your Company') ?></span></label>
+
+    		<div class="control">
+    			<input name="company"
+    			autocomplete="off"
+    			id="company" type="text" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Your Company') ?>" data-validate="{required:false}">
+    		</div>
+    	</div>
+
+    	<div class="field address">
+        	<label class="label" for="address"><span><?php /* @escapeNotVerified */
+        		echo __('Your Address') ?></span></label>
+
+    		<div class="control">
+    			<textarea name="address"
+    			autocomplete="off"
+    			id="address" type="text" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Address') ?>" data-validate="{required:false}"></textarea>
+    		</div>
+    	</div>
+
+        <div class="field avtar">
+            <label class="label" for="testimonial"><span><?php /* @escapeNotVerified */
+                echo __('Your Image') ?></span></label>
+
+            <div class="control">
+                <input type="file" name="avtar" id="avtar">
+            </div>
+        </div>
+
+    	<div class="field testimonial required">
+        	<label class="label" for="testimonial"><span><?php /* @escapeNotVerified */
+        		echo __('Testimonial') ?></span></label>
+
+    		<div class="control">
+    			<textarea name="testimonial"
+    			autocomplete="off"
+    			id="testimonial" type="text" class="input-text" title="<?php /* @escapeNotVerified */
+    			echo __('Testimonial') ?>" data-validate="{required:true}"></textarea>
+    		</div>
+    	</div>
+
+		<div class="primary">
+			<button type="submit" class="action testimonial primary">
+				<span><?php /* @escapeNotVerified */
+					echo __('Submit Testimonial') ?></span></button>
+		</div>
+    	
+    </fieldset>
+</form>
+
+<script type="text/x-magento-init">
+    {
+        "#testimonial-register": {
+            "validation": {}
+        }
+    }
+</script>

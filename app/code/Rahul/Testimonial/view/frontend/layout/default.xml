@@ -1,0 +1,20 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<referenceBlock name="header.links">
+        <!-- <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link-new"  after="-">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+            </arguments>
+        </block> -->
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="storelocator-link" after="register-link-new" >
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Testimonial</argument>
+                <argument name="path" xsi:type="string">testimonial</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+        <referenceContainer name="sidebar.additional">
+            <block class="Rahul\Testimonial\Block\Index\Index" name="testimonial_index_sidebar" before="-" template="Rahul_Testimonial::testimonial_index_sidebar.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

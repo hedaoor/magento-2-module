@@ -1,0 +1,29 @@
+<?php if($block->isModeleEnable()) : ?>
+<?php $collection = $block->getTestimonial(); ?>
+<?php if ($collection && count($collection)): ?>
+<h2><?php echo __('Customer Testimonials') ?></h2>
+<div class="testimonial">
+	<?php foreach ($collection as $data) : ?>
+		<div class="container">
+			<div class="avtar">
+				<!-- <img src="<?php //echo $data->getAvtar() ?>"> -->
+				<img src="<?php echo $block->getAvtarPath($data->getAvtar()) ?>">
+			</div>
+			<div class="details">
+				<div class="name"><?php echo $data->getName(); ?></div>
+				<?php $date = new DateTime($data->getCreationTime()); ?>
+				<div class="date"><?php echo $date->format('d M , Y H:i:s');; ?></div>
+				<div class="testimonial"><?php echo $data->getTestimonial(); ?></div>
+			</div>
+		</div>
+	<?php endforeach ; ?>
+</div>
+
+
+<?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); // for display pager block which we create in block file.   ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('grid records not available.'); ?></span></div>
+<?php endif ?>
+<?php endif ; ?>

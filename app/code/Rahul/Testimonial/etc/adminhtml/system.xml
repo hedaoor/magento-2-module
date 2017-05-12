@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="testimonial" translate="label" sortOrder="10">
+            <label>Testimonial</label>
+        </tab>
+        <section id="testimonial_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Testimonial Settings</label>
+            <tab>testimonial</tab>
+            <resource>Rahul_Testimonial::testimonial_section</resource>
+            <group id="testimonial_grp" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="sidebar_enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sidebar Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="avtar_placeholder" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Placeholder For Avtar</label>
+                    <backend_model>Rahul\Testimonial\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">Testimonial</base_url>
+                </field>
+
+                 <field id="perpage" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enter number of testimonial per page</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

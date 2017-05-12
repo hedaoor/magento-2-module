@@ -1,0 +1,36 @@
+<?php //if($block->isModeleEnable()) : ?>
+<?php $collection = $block->getTestimonial(); ?>
+<?php if ($collection && count($collection)): ?>
+<div class="testimonial">
+	<?php foreach ($collection as $data) : ?>
+		<div class="container">
+			<div class="avtar">
+				<!-- <img src="<?php //echo $data->getAvtar() ?>"> -->
+				<img src="<?php echo $block->getAvtarPath($data->getAvtar()) ?>" width="200" height="200">
+			</div>
+			<div class="details">
+				<div class="name"><?php echo $data->getName(); ?></div>
+				<?php $date = new DateTime($data->getCreationTime()); ?>
+				<div class="date"><?php echo $date->format('d M , Y H:i:s');; ?></div>
+				<div class="testimonial"><?php echo $data->getTestimonial(); ?></div>
+			</div>
+		</div>
+		<br>
+	<?php endforeach ; ?>
+</div>
+
+
+<?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); // for display pager block which we create in block file.   ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('There are no more testimonial.'); ?></span></div>
+<?php endif ?>
+
+<br>
+<div>
+	<button class="submit-btn"><?php echo __('Add Your Testimonial') ?></button>
+	<div class="testimonial-form" style="display:none">
+	<?php echo $block->getChildHtml('testimonial_create_form'); ?>
+	</div>	
+</div>

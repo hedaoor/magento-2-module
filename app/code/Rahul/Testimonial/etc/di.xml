@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<!-- <type name="Rahul\Testimonial\Model\ResourceModel\Testimonial\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">testimonials</argument>
+            <argument name="eventPrefix" xsi:type="string">rahul_testimonial_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">testimonial_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Rahul\Testimonial\Model\ResourceModel\Testimonial</argument>
+        </arguments>
+    </type> -->
+
+    <!-- <virtualType name="Rahul\Testimonial\Model\ResourceModel\Testimonial\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">testimonials</argument>
+            <argument name="resourceModel" xsi:type="string">Rahul\Testimonial\Model\ResourceModel\Testimonial</argument>
+        </arguments>
+    </virtualType>
+    
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="testimonial_grid_data_source" xsi:type="string">Rahul\Testimonial\Model\ResourceModel\Testimonial\Collection</item>
+            </argument>
+        </arguments>
+    </type> -->
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="testimonial_grid_data_source" xsi:type="string">Rahul\Testimonial\Model\ResourceModel\Testimonial\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Rahul\Testimonial\Model\ResourceModel\Testimonial\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">testimonials</argument>
+            <argument name="eventPrefix" xsi:type="string">rahul_testimonial_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">rahul_testimonial_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Rahul\Testimonial\Model\ResourceModel\Testimonial</argument>
+        </arguments>
+    </type>
+    <virtualType name="TestimonialGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="TestimonialGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Rahul\Testimonial\Model\ResourceModel\Testimonial\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">TestimonialGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Rahul\Testimonial\Controller\Index\Index">
+        <plugin name="testimonial_enable" type="Rahul\Testimonial\Plugin\Plugin" sortOrder="1" />
+    </type>
+
+    <!-- <type name="Rahul\Testimonial\Controller\Adminhtml\Testimonial\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type> -->
+
+    <!--  <virtualType name="Magento\Catalog\CategoryImageUploadFaqs" type="Rahul\Testimonial\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">catalog/tmp/category</argument>
+            <argument name="basePath" xsi:type="string">catalog/category</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType> -->
+</config>

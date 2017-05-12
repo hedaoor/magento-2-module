@@ -1,0 +1,32 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Customer Testimonials</title>
+         
+		
+		<css src="Rahul_Testimonial::css/css.css"/>
+		<script src="Rahul_Testimonial::js/js.js"/>
+		<!-- <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/> -->
+		<!-- <script src="path/file.js" defer="defer"/> -->
+		<!-- <link src="http://url.com" src_type="url"/> -->
+		<!-- <remove src="path/remove/file.css"/> -->
+
+		
+    </head> 
+
+    <body>
+
+
+        <!-- <referenceContainer name="sidebar.main">
+            <block class="Rahul\Testimonial\Block\Index\Sidebar" name="testimonial_index_sidebar" before="-" template="Rahul_Testimonial::testimonial_index_sidebar.phtml"/>
+        </referenceContainer> -->
+
+        <referenceContainer name="content">
+            <block class="Rahul\Testimonial\Block\Index\Index" name="testimonial_index_index" template="Rahul_Testimonial::testimonial_index_index.phtml">
+                <block class="Magento\Framework\View\Element\Template" name="testimonial_create_form" template="Rahul_Testimonial::create_testimonial.phtml"/>
+            </block>
+        </referenceContainer>
+
+
+    </body>
+</page>
