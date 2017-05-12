@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Rahul_Outofstock::parent" title="Subscriber Details" module="Rahul_Outofstock" sortOrder="30" resource="Custom_Grid::parent"/>
+		<add id="Rahul_Outofstock::sample" title="Subscriber Details" module="Rahul_Outofstock" sortOrder="1" parent="Rahul_Outofstock::parent" action="outofstock/subscriber" resource="Rahul_Outofstock::sample"/>
+
+    </menu>
+</config>

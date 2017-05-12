@@ -1,0 +1,56 @@
+
+<!--@subject Outofstock Notification Email @-->
+<!--@vars {
+"var this.getUrl($store, 'admin')":"Warehouse Account URL",
+"var customer.email":"Customer Email",
+"var customer.name":"Customer Name"
+} @-->
+ 
+{{template config_path="design/email/header_template"}} <!-- pathe of template header-->
+ 
+<style type="text/css">
+    body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+</style>
+<!-- here $myvar1 , $myvar2, $myvar3, $myvar4, $myvar5, $myvar6 are variables in which we
+                                     asssign values when we use this template for send mail-->
+ 
+<!-- you can Modify content of template according to your requirement-->
+<!-- <table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "%customer_name," customer_name=$product_name}}</p>
+           
+        </td>
+    </tr>
+</table> -->
+ 
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+    <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+        <tr>
+            <td valign="top">
+            <!-- [ header starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top">
+                            <p><a href="{{store url=""}}" style="color:#1E7EC8;"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="" border="0"/></a></p></td>
+                    </tr>
+                </table>
+
+            <!-- [ middle starts here] -->
+                <p>Dear Customer,</p>							
+				<p>
+
+					This is to inform you that the '{{trans "%product_name," product_name=$data.product_name}}' product is back in stock, so you can purchase this product now.
+				</p>	
+				<p>
+					Click here to open <a href='{{trans "%product_url" product_url=$data.product_url}}'>{{trans "%product_name," product_name=$data.product_name}}</a> product page.
+				</p>
+				
+            </td>
+        </tr>
+    </table>
+</div>
+
+{{template config_path="design/email/footer_template"}} <!--footer of template-->
+
+<!--@subject Out of Stock Subscription Mail @-->

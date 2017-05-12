@@ -1,0 +1,21 @@
+<?php if($block->enable()): ?>
+<?php $action = $this->getUrl('outofstock/index/index', ['_current' => true]) ?>
+<?php //echo get_class($block);exit;
+	$currentProduct = $block->getCurrentProduct();
+	// echo $currentProduct->isAvailable();exit;
+	// echo $block->enable();exit;
+	if($block->getStock($currentProduct) == 0) {
+ ?>
+
+</form>
+<!-- close form to prevent add to cart -->
+<form action="<?php echo $action ?>" method="post">
+	<input type="hidden" name="product_id" placeholder="Enter your email" value="<?php echo $currentProduct->getId() ?>" />
+	<input type="text" name="email" placeholder="Enter your email" />
+	<button>Notify Me</button>
+</form>
+
+<!-- open form to prevent add to cart -->
+<form>
+<?php } ?>
+<?php endif; ?>
