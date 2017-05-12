@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Wishlist\Controller\Index\Add" type="Rahul\Wishlist\Controller\Rewrite\Index\Add" />
+
+    <!-- <preference for="Magento\Catalog\Block\Product\ListProduct" type="Rahul\Wishlist\Block\Product\ListProduct"/> -->
+    <!-- <preference for="Magento\Catalog\Block\Product\View" type="Rahul\Wishlist\Block\Product\View"/> -->
+
+    <type name="Magento\Wishlist\Controller\AbstractIndex">
+        <plugin disabled="true" name="authentication" type="\Magento\Wishlist\Controller\Index\Plugin" sortOrder="10"/>
+    </type>
+
+    <type name="\Rahul\Wishlist\Controller\Rewrite\Index\Add">
+        <plugin disabled="false" name="authentication" type="\Rahul\Wishlist\Controller\Index\Plugin" sortOrder="1"/>
+    </type>
+
+</config>

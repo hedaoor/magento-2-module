@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance dc" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+ 	
+   <referenceBlock name="product.info.addto">
+       <action method="setTemplate">
+           <argument name="template" xsi:type="string">Rahul_Wishlist::product/view/addto.phtml</argument>
+       </action>
+   </referenceBlock>
+ 
+</page>
